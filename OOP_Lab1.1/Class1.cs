@@ -85,24 +85,23 @@ namespace OOP_Lab1._1
 
         public override string ToString() => $"{A}x + {B}y + {C}z + {D} = 0";
 
-        public bool IsPointOnPlane(Points p, double epsilon = 1e-9)
+        public bool IsPointOnPlane(Points p)
         {
             double result = A * p.X + B * p.Y + C * p.Z + D;
-            return Math.Abs(result) < epsilon;
+            return Math.Abs(result) < 1e-9;
         }
 
         public void PrintAxisIntersections()
         {
-            const double eps = 1e-9;
             Console.WriteLine("Точки перетину з осями координат:");
 
-            if (Math.Abs(A) > eps) Console.WriteLine($"Вісь X: ({-D / A}, 0, 0)");
+            if (Math.Abs(A) > 1e-9) Console.WriteLine($"Вісь X: ({-D / A}, 0, 0)");
             else Console.WriteLine("З віссю X немає перетину.");
 
-            if (Math.Abs(B) > eps) Console.WriteLine($"Вісь Y: (0, {-D / B}, 0)");
+            if (Math.Abs(B) > 1e-9) Console.WriteLine($"Вісь Y: (0, {-D / B}, 0)");
             else Console.WriteLine("З віссю Y немає перетину.");
 
-            if (Math.Abs(C) > eps) Console.WriteLine($"Вісь Z: (0, 0, {-D / C})");
+            if (Math.Abs(C) > 1e-9) Console.WriteLine($"Вісь Z: (0, 0, {-D / C})");
             else Console.WriteLine("З віссю Z немає перетину.");
         }
     }
