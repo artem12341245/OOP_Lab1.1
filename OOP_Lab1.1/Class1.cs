@@ -23,9 +23,9 @@ namespace OOP_Lab1._1
         }
 
     }
-    internal class Plane
+    public class Plane
     {
-        public double[] coeffs = new double[4];
+        private double[] coeffs = new double[4];
 
         public double A
         {
